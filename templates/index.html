@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/carousel.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/jqcloud.min.css')}}">
+
+  <title>Samantha, A moive AI for movies producers</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md fixed-top bg-dark ">
+        <img src="{{ url_for('static',filename='img/Samantha-trans.png')}}" id="logo" alt="">
+        <h4 id="logo-name">Samantha</h4>
+    </nav>
+  </header>
+  <div class="coverpage">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="first-slide" src="{{ url_for('static',filename='img/background.png')}}" alt="First slide">
+                <div class="container">
+                  <div class="carousel-caption text-left">
+                    <h1>Samantha Movies Tracker</h1>
+                    <p>The movies tracker you need. Samantha is a movie tracking tool that based on Naive Bayes and Logistics algorithm.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  </div>
+  <div class="container" id="inputbox">
+  <div class="search-area center" id="search">
+    <input type="text" id="search-bar" class="form-control center active" placeholder="Movie's link on Rottentomatoes" data-bind="textInput:movieUrl,event:{keypress:onEnter}"></input>
+    <!-- <button type="button" class="btn btn-warning" data-bind="event:{keypress:onEnter}"  </button> -->
+    <!-- <div class="form-control center active"id="search-result">
+    <p class="search-lists">nihao</p>
+    <hr class="result-divider">
+    </div> -->
+  </div>
+  <div class="progress-area">
+    <div id="container"></div>
+    <p id="progressStatus" data-bind="text:progressStatus"></p>
+  </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="container-fluid" id="result-area">
+  <div class="container-title"> <h2> Analysis Result </h2></div>
+  <div class="row">
+  <div class="col-md-5 result-info">
+  <h3 class="movie-title center" data-bind="text:movieTitle"></h3>
+  <img data-bind="attr:{src:movieImg}" alt="" class="movie-img">
+  </div>
+  <div class="col-md-7">
+  <div id="keywords" class="jqcloud"></div>
+
+  </div>
+  <div id="social-media">
+    <p>Naive Bayes Result: <span data-bind="text:Naive"></span></p>
+    <p>Logistic Regression Result: <span data-bind="text:Logis"></span></p>
+  </div>
+  </div>
+  </div>
+  <div class="container-fluid" id="explore">
+    <div class="container-title upgrade"> <h2> Upgrade to Premium </h2></div>
+    <div id="features-list">
+      <p><h4><b>Unlimied search times </b></h4></p>
+      <p><h4><b>Movies market channel analysis </b></h4></p>
+      <p><h4><b>Movies reviews prediction </b></h4></p>
+
+      <p><button class="btn btn-upgrade"><b>Upgrade now! </b></button></p>
+    </div>
+  </div>
+  <div class="container-fluid" id="footer">
+    <p>Production of Zack Zhuang, Justin Read, Michael Fodor</p>
+    <p>CS183, Winter 2018, Santa Clara University</p>
+    <p>All data collected from <b>Rottentomatoes</b></p>
+
+  </div>
+  <!-- local JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"> </script>
+  <script type='text/javascript' src="{{ url_for('static',filename='js/knockout.js')}}"></script>
+  <script type='text/javascript' src="{{ url_for('static',filename='js/jqcloud.min.js')}}"></script>
+  <!-- <script type='text/javascript' src="{{ url_for('static',filename='js/progressbar.min.js')}}"></script> -->
+  <script type='text/javascript' src="{{ url_for('static',filename='js/progressbar.min.js')}}"></script>
+
+  <script type='text/javascript' src="{{ url_for('static',filename='js/script.js')}}"></script>
+</body>
+
+</html>
