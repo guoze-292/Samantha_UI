@@ -1,6 +1,7 @@
 ## Samantha, rates movies based on their reviews
 
 #### this is a project for Santa Clara University CS183 (winter 2018)
+#### Authors: Zack Zhuang, Justin Read, Michael Fodor
 
 ### Tech stack we use
   1. Front-end: knockout.js, bootstrap, progressbarjs
